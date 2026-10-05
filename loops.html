@@ -1,0 +1,609 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Conditional Statements</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef1f5;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #215e9c;
+        }
+
+        .grid {
+            max-width: 950px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px gray;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            color: #215e9c;
+        }
+
+        .card input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 8px;
+        }
+
+        .card button {
+            width: 100%;
+            padding: 10px;
+            background: #2c7a7b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .out {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #2c7a7b;
+        }
+
+        @media (max-width: 680px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Conditional Statements</h1>
+
+    <div class="grid">
+
+        <!-- 1. Voting -->
+        <div class="card">
+            <h2>1. Eligible for Vote</h2>
+
+            <input type="number" id="age1" placeholder="Enter age">
+
+            <button onclick="q1()">Check</button>
+
+            <div class="out" id="out1"></div>
+        </div>
+
+
+        <!-- 2. Remainder -->
+        <div class="card">
+            <h2>2. Remainder is Zero</h2>
+
+            <input type="number" id="n2" placeholder="Enter number">
+
+            <button onclick="q2()">Check</button>
+
+            <div class="out" id="out2"></div>
+        </div>
+
+
+        <!-- 3. Positive Number -->
+        <div class="card">
+            <h2>3. Positive Number</h2>
+
+            <input type="number" id="n3" placeholder="Enter number">
+
+            <button onclick="q3()">Check</button>
+
+            <div class="out" id="out3"></div>
+        </div>
+
+
+        <!-- 4. Student Marks -->
+        <div class="card">
+            <h2>4. Student Marks</h2>
+
+            <input type="number" id="marks4" placeholder="Enter marks">
+
+            <button onclick="q4()">Check</button>
+
+            <div class="out" id="out4"></div>
+        </div>
+
+
+        <!-- 5. Temperature -->
+        <div class="card">
+            <h2>5. Temperature</h2>
+
+            <input type="number" id="temp5" placeholder="Enter temperature">
+
+            <button onclick="q5()">Check</button>
+
+            <div class="out" id="out5"></div>
+        </div>
+
+
+        <!-- 6. Access -->
+        <div class="card">
+            <h2>6. Access Operation</h2>
+
+            <input type="number" id="pass6" placeholder="Enter passkey">
+
+            <button onclick="q6()">Check</button>
+
+            <div class="out" id="out6"></div>
+        </div>
+
+
+        <!-- 7. Age Category -->
+        <div class="card">
+            <h2>7. Age Category</h2>
+
+            <input type="number" id="age7" placeholder="Enter age">
+
+            <button onclick="q7()">Check</button>
+
+            <div class="out" id="out7"></div>
+        </div>
+
+
+        <!-- 8. Grade -->
+        <div class="card">
+            <h2>8. Student Grade</h2>
+
+            <input type="number" id="marks8" placeholder="Enter marks">
+
+            <button onclick="q8()">Check</button>
+
+            <div class="out" id="out8"></div>
+        </div>
+
+
+        <!-- 9. Positive Negative Zero -->
+        <div class="card">
+            <h2>9. Positive / Negative / Zero</h2>
+
+            <input type="number" id="n9" placeholder="Enter number">
+
+            <button onclick="q9()">Check</button>
+
+            <div class="out" id="out9"></div>
+        </div>
+
+
+        <!-- 10. Temperature -->
+        <div class="card">
+            <h2>10. Temperature Status</h2>
+
+            <input type="number" id="temp10" placeholder="Enter temperature">
+
+            <button onclick="q10()">Check</button>
+
+            <div class="out" id="out10"></div>
+        </div>
+
+
+        <!-- 11. Day -->
+        <div class="card">
+            <h2>11. Day</h2>
+
+            <input type="number" id="day11" placeholder="Enter 1 - 4">
+
+            <button onclick="q11()">Check</button>
+
+            <div class="out" id="out11"></div>
+        </div>
+
+
+        <!-- 12. Salary -->
+        <div class="card">
+            <h2>12. Salary</h2>
+
+            <input type="number" id="salary12" placeholder="Enter salary">
+
+            <button onclick="q12()">Check</button>
+
+            <div class="out" id="out12"></div>
+        </div>
+
+
+        <!-- 13. Discount -->
+        <div class="card">
+            <h2>13. Discount</h2>
+
+            <input type="number" id="amount13" placeholder="Enter amount">
+
+            <button onclick="q13()">Check</button>
+
+            <div class="out" id="out13"></div>
+        </div>
+
+
+        <!-- 14. Battery -->
+        <div class="card">
+            <h2>14. Battery</h2>
+
+            <input type="number" id="battery14" placeholder="Battery %">
+
+            <button onclick="q14()">Check</button>
+
+            <div class="out" id="out14"></div>
+        </div>
+
+
+        <!-- 15. Speed -->
+        <div class="card">
+            <h2>15. Speed</h2>
+
+            <input type="number" id="speed15" placeholder="Enter speed">
+
+            <button onclick="q15()">Check</button>
+
+            <div class="out" id="out15"></div>
+        </div>
+
+
+        <!-- 16. ATM -->
+        <div class="card">
+            <h2>16. ATM Withdrawal</h2>
+
+            <input type="number" id="balance16" placeholder="Balance">
+
+            <input type="number" id="withdraw16" placeholder="Withdraw amount">
+
+            <button onclick="q16()">Check</button>
+
+            <div class="out" id="out16"></div>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // 1. VOTE
+        function q1() {
+
+            let age = Number(document.getElementById("age1").value);
+
+            if (age >= 18) {
+                document.getElementById("out1").innerText =
+                    "Eligible for Vote";
+            } else {
+                document.getElementById("out1").innerText =
+                    "Not Eligible for Vote";
+            }
+        }
+
+
+        // 2. REMAINDER
+        function q2() {
+
+            let n = Number(document.getElementById("n2").value);
+
+            if (n % 5 === 0) {
+                document.getElementById("out2").innerText =
+                    "Remainder is Zero";
+            } else {
+                document.getElementById("out2").innerText =
+                    "Remainder is Not Zero";
+            }
+        }
+
+
+        // 3. POSITIVE
+        function q3() {
+
+            let n = Number(document.getElementById("n3").value);
+
+            if (n > 0) {
+                document.getElementById("out3").innerText =
+                    "N is a Positive Number";
+            } else {
+                document.getElementById("out3").innerText =
+                    "N is Not Positive";
+            }
+        }
+
+
+        // 4. MARKS
+        function q4() {
+
+            let marks = Number(document.getElementById("marks4").value);
+
+            if (marks >= 40) {
+                document.getElementById("out4").innerText =
+                    "Pass";
+            } else {
+                document.getElementById("out4").innerText =
+                    "Fail";
+            }
+        }
+
+
+        // 5. TEMPERATURE
+        function q5() {
+
+            let temp = Number(document.getElementById("temp5").value);
+
+            if (temp > 32) {
+                document.getElementById("out5").innerText =
+                    "Hot";
+            } else {
+                document.getElementById("out5").innerText =
+                    "Normal";
+            }
+        }
+
+
+        // 6. ACCESS
+        function q6() {
+
+            let passkey = Number(document.getElementById("pass6").value);
+
+            if (passkey === 12345) {
+                document.getElementById("out6").innerText =
+                    "Access Granted";
+            } else {
+                document.getElementById("out6").innerText =
+                    "Access Denied";
+            }
+        }
+
+
+        // 7. AGE CATEGORY
+        function q7() {
+
+            let age = Number(document.getElementById("age7").value);
+
+            if (age < 13) {
+                document.getElementById("out7").innerText =
+                    "Child";
+            }
+
+            else if (age < 20) {
+                document.getElementById("out7").innerText =
+                    "Teenager";
+            }
+
+            else if (age < 60) {
+                document.getElementById("out7").innerText =
+                    "Adult";
+            }
+
+            else {
+                document.getElementById("out7").innerText =
+                    "Senior Citizen";
+            }
+        }
+
+
+        // 8. GRADE
+        function q8() {
+
+            let marks = Number(document.getElementById("marks8").value);
+
+            if (marks >= 90) {
+                document.getElementById("out8").innerText =
+                    "A+ Grade";
+            }
+
+            else if (marks >= 75) {
+                document.getElementById("out8").innerText =
+                    "A Grade";
+            }
+
+            else if (marks >= 60) {
+                document.getElementById("out8").innerText =
+                    "B Grade";
+            }
+
+            else if (marks >= 40) {
+                document.getElementById("out8").innerText =
+                    "C Grade";
+            }
+
+            else {
+                document.getElementById("out8").innerText =
+                    "Fail";
+            }
+        }
+
+
+        // 9. POSITIVE / NEGATIVE / ZERO
+        function q9() {
+
+            let n = Number(document.getElementById("n9").value);
+
+            if (n > 0) {
+                document.getElementById("out9").innerText =
+                    "Positive";
+            }
+
+            else if (n < 0) {
+                document.getElementById("out9").innerText =
+                    "Negative";
+            }
+
+            else {
+                document.getElementById("out9").innerText =
+                    "Zero";
+            }
+        }
+
+
+        // 10. TEMPERATURE STATUS
+        function q10() {
+
+            let temp = Number(document.getElementById("temp10").value);
+
+            if (temp >= 40) {
+                document.getElementById("out10").innerText =
+                    "Very Hot";
+            }
+
+            else if (temp >= 30) {
+                document.getElementById("out10").innerText =
+                    "Hot";
+            }
+
+            else if (temp >= 20) {
+                document.getElementById("out10").innerText =
+                    "Normal";
+            }
+
+            else {
+                document.getElementById("out10").innerText =
+                    "Cold";
+            }
+        }
+
+
+        // 11. DAY
+        function q11() {
+
+            let day = Number(document.getElementById("day11").value);
+
+            if (day === 1) {
+                document.getElementById("out11").innerText =
+                    "Monday";
+            }
+
+            else if (day === 2) {
+                document.getElementById("out11").innerText =
+                    "Tuesday";
+            }
+
+            else if (day === 3) {
+                document.getElementById("out11").innerText =
+                    "Wednesday";
+            }
+
+            else if (day === 4) {
+                document.getElementById("out11").innerText =
+                    "Thursday";
+            }
+
+            else {
+                document.getElementById("out11").innerText =
+                    "Invalid Day";
+            }
+        }
+
+
+        // 12. SALARY
+        function q12() {
+
+            let salary =
+                Number(document.getElementById("salary12").value);
+
+            if (salary >= 100000) {
+                document.getElementById("out12").innerText =
+                    "High Salary";
+            }
+
+            else if (salary >= 50000) {
+                document.getElementById("out12").innerText =
+                    "Good Salary";
+            }
+
+            else if (salary >= 25000) {
+                document.getElementById("out12").innerText =
+                    "Average Salary";
+            }
+
+            else {
+                document.getElementById("out12").innerText =
+                    "Low Salary";
+            }
+        }
+
+
+        // 13. DISCOUNT
+        function q13() {
+
+            let amount =
+                Number(document.getElementById("amount13").value);
+
+            if (amount >= 1000) {
+                document.getElementById("out13").innerText =
+                    "Discount Available";
+            } else {
+                document.getElementById("out13").innerText =
+                    "No Discount";
+            }
+        }
+
+
+        // 14. BATTERY
+        function q14() {
+
+            let battery =
+                Number(document.getElementById("battery14").value);
+
+            if (battery <= 20) {
+                document.getElementById("out14").innerText =
+                    "Low Battery";
+            } else {
+                document.getElementById("out14").innerText =
+                    "Battery is Good";
+            }
+        }
+
+
+        // 15. SPEED
+        function q15() {
+
+            let speed =
+                Number(document.getElementById("speed15").value);
+
+            if (speed <= 60) {
+                document.getElementById("out15").innerText =
+                    "Safe Speed";
+            } else {
+                document.getElementById("out15").innerText =
+                    "Overspeed";
+            }
+        }
+
+
+        // 16. ATM
+        function q16() {
+
+            let balance =
+                Number(document.getElementById("balance16").value);
+
+            let withdraw =
+                Number(document.getElementById("withdraw16").value);
+
+            if (withdraw <= balance) {
+                document.getElementById("out16").innerText =
+                    "Withdrawal Successful";
+            } else {
+                document.getElementById("out16").innerText =
+                    "Insufficient Balance";
+            }
+        }
+
+    </script>
+</body>
+</html>
+
